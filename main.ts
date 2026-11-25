@@ -33,10 +33,11 @@ if (
   LAST_WORDS.length < 1 ||
   LAST_WORDS.length > 150 ||
   LAST_WORDS.includes("\n") ||
-  LAST_WORDS.trim().length === 0
+  LAST_WORDS.trim().length === 0 ||
+  LAST_WORDS !== LAST_WORDS.trim()
 ) {
   throw new Error(
-    `entry must be a single line of 1-150 chars, got ${LAST_WORDS.length}`,
+    `entry must be a single line of 1-150 chars with no leading or trailing whitespace, got ${LAST_WORDS.length}`,
   );
 }
 
